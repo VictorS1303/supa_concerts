@@ -1,6 +1,16 @@
 ---
 import Hero from "../components/Hero.astro"
+import ConcertsOverview from "../components/ConcertsOverview.astro"
 import Layout from "../layouts/Layout.astro"
+
+const concertCards = [
+  {
+    src: "/images/hero/hero_bg.webp",
+    alt: "Concert image",
+    artistNameText: "Irie Souljah",
+    genreText: "Reggae",
+  },
+]
 ---
 
 <Layout title="Concerts">
@@ -11,4 +21,5 @@ import Layout from "../layouts/Layout.astro"
     heroParagraphText="Your next live music experience starts here"
     hasChevron={true}
   />
+  <ConcertsOverview concertCards={concertCards} />
 </Layout>

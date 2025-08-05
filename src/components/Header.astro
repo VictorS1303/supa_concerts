@@ -1,0 +1,9 @@
+---
+const {class: className, id: id, headerText} = Astro.props
+---
+
+<header class=`${className} text-center` id={id}>
+  <h2 class="inline-block text-white text-3xl mt-16 border-b-2 border-white">
+    {headerText}
+  </h2>
+</header>

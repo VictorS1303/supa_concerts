@@ -1,0 +1,11 @@
+---
+const {concertCards} = Astro.props
+import Section from './Section.astro'
+import Header from './Header.astro'
+import ConcertCardsContainer from './ConcertCardsContainer.astro'
+---
+
+<Section class="min-h-screen min-w-screen ">
+  <Header headerText="Concerts" />
+  <ConcertCardsContainer concertCards={concertCards}/>
+</Section>

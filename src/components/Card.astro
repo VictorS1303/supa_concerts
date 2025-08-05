@@ -1,21 +1,31 @@
 ---
-const { class: className, id: id, isConcertCard } = Astro.props
+const {
+  class: className,
+  id: id,
+  isConcertCard,
+  artistNameText,
+  genreText,
+  src,
+  alt,
+} = Astro.props
 ---
 
 {
   isConcertCard && (
     <article class="relative h-[200px] w-[325px] cursor-pointer group">
       <img
-        src="/images/hero/hero_bg.webp"
+        src={src}
         class="absolute inset-0 w-full h-full object-cover rounded-md z-[1000] transition-translate duration-150 ease-in group-hover:-translate-y-[60px] group-hover:rounded-br-none group-hover:rounded-bl-none"
-        alt="Concert background"
+        alt={alt}
       />
       <div class="absolute bottom-0 left-0 w-full h-full flex items-end justify-between bg-white pb-4 px-2 rounded-md">
-        <h4 class="artist-name text-[var(--accent-text-color)] text-xl">
-          Irie Souljah
+        <h4 class="artist-name text-[var(--accent-text-color)] text-xl font-bold">
+          {artistNameText}
         </h4>
 
-        <h4 class="text-[var(--accent-text-color)] text-xl">Reggae</h4>
+        <h4 class="text-[var(--accent-text-color)] text-xl font-bold">
+          {genreText}
+        </h4>
       </div>
     </article>
   )
