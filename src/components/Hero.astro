@@ -7,11 +7,14 @@ const {
   heroParagraphText,
   hasHeroButton,
   heroButtonText,
+  hasOverlay,
+  hasChevron,
   href,
 } = Astro.props
 import Section from "./Section.astro"
 import Overlay from "./Overlay.astro"
 import Button from "./Button.astro"
+import Chevron from "./Chevron.astro"
 ---
 
 <Section class="relative h-screen w-screen">
@@ -25,8 +28,8 @@ import Button from "./Button.astro"
     <p class="text-white text-2xl text-center px-4 max-w-[65ch] md:text-3xl">
       {heroParagraphText}
     </p>
-    {hasHeroButton && <Button buttonText={heroButtonText} href={href}/>}
+    {hasHeroButton && <Button buttonText={heroButtonText} href={href} />}
   </div>
-
-  <Overlay />
+  {hasOverlay && <Overlay />}
+  {hasChevron && <Chevron />}
 </Section>
