@@ -9,9 +9,13 @@ const { title } = Astro.props
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <script
+      src="https://kit.fontawesome.com/2a447b40ae.js"
+      crossorigin="anonymous"></script>
   </head>
   <body
     class="bg-[var(--body-bg-color)] text-[var(--accent-color)] min-h-screen min-w-screen"
   >
+    <slot />
   </body>
 </html>
