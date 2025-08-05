@@ -1,0 +1,5 @@
+---
+const {class: className, id: id, href, buttonText} = Astro.props
+---
+
+<a href={href} class="text-white bg-[var(--button-bg-color)] w-fit h-fit mt-4 p-4 text-lg rounded-md whitespace-nowrap cursor-pointer transition-opacity duration-150 ease-in hover:opacity-90 md:text-xl">{buttonText}</a>

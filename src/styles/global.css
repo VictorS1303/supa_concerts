@@ -8,6 +8,7 @@
     --primary-text-color: #f8f9fa;
     --accent-color: #39c188;
     --loading-screen-bg-color: #39c188;
+    --button-bg-color: #2d976a;
 
     /* FONTS */
     --primary-font: 'Roboto', system-ui;
@@ -18,10 +19,12 @@ body
     font-family: var(--primary-font);
 }
 
-.hide
-{
-    opacity: 0;
-    pointer-events: none;
-    z-index: -10000;
-    transition: opacity .3s ease-in;
+.hide {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.hidden-complete {
+  pointer-events: none;
+  z-index: -10000;
 }

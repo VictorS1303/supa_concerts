@@ -5,19 +5,26 @@ import Section from "./Section.astro"
 ---
 
 <Section
-  class="grid place-content-center min-h-screen min-w-screen bg-[var(--loading-screen-bg-color)]"
-  id="loading_screen">
+  class="fixed top-0 left-0 grid place-content-center min-h-screen min-w-screen bg-[var(--loading-screen-bg-color)] z-[10000]"
+  id="loading_screen"
+>
   <div class="flex flex-col gap-8 justify-center text-center items-center">
-    <h1 class="text-white text-3xl font-bold">{loadingScreenText}</h1>
+    <h1 class="text-white text-3xl font-bold md:text-5xl">
+      {loadingScreenText}
+    </h1>
     <LoadingBar />
   </div>
 </Section>
 
-
 <script>
-  const loadingScreen = document.querySelector('#loading_screen')
+  const loadingScreen = document.querySelector("#loading_screen")
 
   setTimeout(() => {
-    loadingScreen?.classList.add('hide')
+    loadingScreen?.classList.add("hide")
+
+    // Wait for the transition to finish before hiding completely
+    setTimeout(() => {
+      loadingScreen?.classList.add("hidden-complete")
+    }, 300) // Match the 0.3s transition time
   }, 3000)
 </script>

@@ -1,8 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import LoadingScreen from "../components/LoadingScreen.astro"
+import Hero from "../components/Hero.astro"
 ---
 
 <Layout title="SupaFestival | Home">
-  <!-- <LoadingScreen loadingScreenText="SupaFestival" /> -->
+  <Hero
+    src="/images/hero/hero_bg.webp"
+    heroHeaderText="SupaFestival"
+    heroParagraphText="Your go to place for your next live music experience"
+    hasHeroButton={true}
+    heroButtonText="Find your next concert"
+    href="/concerts"
+  />
+
+  <LoadingScreen loadingScreenText="SupaFestival" />
 </Layout>
