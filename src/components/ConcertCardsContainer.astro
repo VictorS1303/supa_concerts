@@ -10,7 +10,7 @@ console.log("🎵 concertCardsData:", concertCardsData)
   {
     concertCardsData.length > 0
       ? concertCardsData.map((concertCard) => (
-          <a href="#">
+          <a href={`concerts/${concertCard.concert_slug}`}>
             <Card
               isConcertCard={true}
               src={`${concertCard.artist_image}.webp`}

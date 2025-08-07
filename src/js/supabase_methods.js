@@ -13,4 +13,13 @@ export async function fetchConcertsData() {
     return data || []
 }
 
-// https://tmqwruamuhsgfgevkdui.supabase.co/storage/v1/object/public/concert-card-images/iriesouljahn1
+export async function fetchConcertBySlug(slug)
+{
+    const {data, error} = await supabaseClient
+    .from('concert_cards')
+    .select('*')
+    .eq('concert_slug', slug)
+    .single()
+
+    return data
+}

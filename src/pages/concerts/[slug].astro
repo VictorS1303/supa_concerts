@@ -1,0 +1,11 @@
+---
+export const prerender = false
+
+import { fetchConcertBySlug } from '../../js/supabase_methods.js'
+import Layout from '../../layouts/Layout.astro'
+import Hero from '../../components/Hero.astro'
+
+const { slug } = Astro.params
+const concert = await fetchConcertBySlug(slug)
+
+---
