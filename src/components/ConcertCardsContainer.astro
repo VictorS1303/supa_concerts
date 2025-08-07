@@ -1,19 +1,22 @@
 ---
+import { fetchConcertsData } from "../js/supabase_methods"
 import Card from "./Card.astro"
-const { class: className, id: id, concertCards = [] } = Astro.props
+
+const concertCardsData = await fetchConcertsData()
+console.log("🎵 concertCardsData:", concertCardsData)
 ---
 
-<div class="flex flex-col justify-center items-center mt-20">
+<div class="flex flex-wrap gap-8 justify-center items-center mt-20">
   {
-    concertCards.length > 0
-      ? concertCards.map((concertCard) => (
+    concertCardsData.length > 0
+      ? concertCardsData.map((concertCard) => (
           <a href="#">
             <Card
               isConcertCard={true}
-              src={concertCard.src}
+              src={`${concertCard.artist_image}.webp`}
               alt={concertCard.alt}
-              artistNameText={concertCard.artistNameText}
-              genreText={concertCard.genreText}
+              artistNameText={concertCard.artist_name}
+              genreText={concertCard.artist_genre}
             />
           </a>
         ))

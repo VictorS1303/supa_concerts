@@ -15,7 +15,7 @@ const {
     <article class="relative h-[200px] w-[325px] cursor-pointer group">
       <img
         src={src}
-        class="absolute inset-0 w-full h-full object-cover rounded-md z-[1000] transition-translate duration-150 ease-in group-hover:-translate-y-[60px] group-hover:rounded-br-none group-hover:rounded-bl-none"
+        class="absolute inset-0 w-full h-full object-cover rounded-md z-[1000] transition-translate duration-150 ease-in md:group-hover:-translate-y-[60px] group-hover:rounded-br-none group-hover:rounded-bl-none"
         alt={alt}
       />
       <div class="absolute bottom-0 left-0 w-full h-full flex items-end justify-between bg-white pb-4 px-2 rounded-md">
@@ -26,6 +26,13 @@ const {
         <h4 class="text-[var(--accent-text-color)] text-xl font-bold">
           {genreText}
         </h4>
+      </div>
+
+      <div class="absolute bottom-0 left-0 flex items-end justify-between w-full bg-white py-3 px-2 rounded-bl-md rounded-br-md text-[var(--accent-text-color)] text-xl font-bold z-[9999] pointer-events-none md:hidden">
+        <h4 class="artist-name text-[var(--accent-text-color)] text-xl font-bold">
+          {artistNameText}
+        </h4>
+        <h4>{genreText}</h4>
       </div>
     </article>
   )
